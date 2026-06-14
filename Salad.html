@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>salad Order</title>
+
+<style>
+
+body{
+    font-family:Arial, sans-serif;
+    background:#111;
+    color:white;
+    margin:0;
+    padding:0;
+}
+
+.container{
+    max-width:500px;
+    margin:40px auto;
+    background:#1c1c1c;
+    padding:20px;
+    border-radius:15px;
+}
+
+img{
+    width:100%;
+    border-radius:15px;
+}
+
+h1{
+    color:orange;
+}
+
+select, button{
+    width:100%;
+    padding:12px;
+    margin-top:15px;
+    border:none;
+    border-radius:10px;
+    font-size:16px;
+}
+
+select{
+    background:#222;
+    color:white;
+}
+
+button{
+    background:orange;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+button:hover{
+    background:white;
+}
+
+.price{
+    font-size:25px;
+    margin-top:20px;
+    color:orange;
+    font-weight:bold;
+}
+
+.payment-box{
+    display:none;
+    margin-top:20px;
+    background:#222;
+    padding:15px;
+    border-radius:10px;
+}
+
+.payment-option{
+    background:#333;
+    padding:12px;
+    border-radius:8px;
+    margin-top:10px;
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=1200&auto=format&fit=crop">
+
+<h1>Fresh Salad</h1>
+
+<p>
+Fresh salad for good health
+</p>
+
+<label>Select your favorite salad</label>
+
+<select id="size" onchange="changePrice()">
+
+<option value="49">Green Salad - 49</option>
+
+<option value="99">Fruit Salad - 99</option>
+
+<option value="149">Mix Veg Salad- 149</option>
+
+</select>
+
+<div class="price" id="price">
+Price: ₹49
+</div>
+
+<button onclick="showPayment()">
+Order Now
+</button>
+
+<div class="payment-box" id="paymentBox">
+
+<h2>Select Payment Method</h2>
+
+<div class="payment-option">
+📱 UPI Payment
+</div>
+
+<div class="payment-option">
+💳 Credit / Debit Card
+</div>
+
+<div class="payment-option">
+💵 Cash On Delivery
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function changePrice(){
+
+    let size = document.getElementById("size").value;
+
+    document.getElementById("price").innerHTML =
+    "Price: ₹" + size;
+}
+
+function showPayment(){
+
+    document.getElementById("paymentBox").style.display = "block";
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>pizza Order</title>
+
+<style>
+
+body{
+    font-family:Arial, sans-serif;
+    background:#111;
+    color:white;
+    margin:0;
+    padding:0;
+}
+
+.container{
+    max-width:500px;
+    margin:40px auto;
+    background:#1c1c1c;
+    padding:20px;
+    border-radius:15px;
+}
+
+img{
+    width:100%;
+    border-radius:15px;
+}
+
+h1{
+    color:orange;
+}
+
+select, button{
+    width:100%;
+    padding:12px;
+    margin-top:15px;
+    border:none;
+    border-radius:10px;
+    font-size:16px;
+}
+
+select{
+    background:#222;
+    color:white;
+}
+
+button{
+    background:orange;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+button:hover{
+    background:white;
+}
+
+.price{
+    font-size:25px;
+    margin-top:20px;
+    color:orange;
+    font-weight:bold;
+}
+
+.payment-box{
+    display:none;
+    margin-top:20px;
+    background:#222;
+    padding:15px;
+    border-radius:10px;
+}
+
+.payment-option{
+    background:#333;
+    padding:12px;
+    border-radius:8px;
+    margin-top:10px;
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<img src="https://images.unsplash.com/photo-1604382355076-af4b0eb60143?q=80&w=1000&auto=format&fit=crop">
+
+<h1>Pizza Menu</h1>
+
+<p>
+Fresh pizza with cheese, crispy and special sauce.
+</p>
+
+<label>Select your favorite pizza</label>
+
+<select id="size" onchange="changePrice()">
+
+<option value="49">Regular Pizza - 49</option>
+
+<option value="79">Cheese Pizza - 79</option>
+
+<option value="129">Onion & Corn Pizza - 129</option>
+    
+<option value="299">Mix Veg Pizza - 299</option>
+
+</select>
+
+<div class="price" id="price">
+Price: ₹49
+</div>
+
+<button onclick="showPayment()">
+Order Now
+</button>
+
+<div class="payment-box" id="paymentBox">
+
+<h2>Select Payment Method</h2>
+
+<div class="payment-option">
+📱 UPI Payment
+</div>
+
+<div class="payment-option">
+💳 Credit / Debit Card
+</div>
+
+<div class="payment-option">
+💵 Cash On Delivery
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function changePrice(){
+
+    let size = document.getElementById("size").value;
+
+    document.getElementById("price").innerHTML =
+    "Price: ₹" + size;
+}
+
+function showPayment(){
+
+    document.getElementById("paymentBox").style.display = "block";
+}
+
+</script>
+
+</body>
+</html>
